@@ -1,0 +1,6 @@
+web_assets
+node_modules
+.github
+.git
+*.md
+dist
