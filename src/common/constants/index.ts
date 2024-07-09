@@ -1,12 +1,12 @@
-/**
- * TODO: Refactor this variable name, since we're using my mirror instead.
- */
+// Use env var URL for remote assets
+const ASSETS_URL = import.meta.env.VITE_ASSETS_URL;
+
 export const digitalOcean = {
-  EFFECTS_ROOT_URL: "https://lofi-co-assets.vexcited.com/effects/",
-  ALARMS_ROOT_URL: "https://lofi-co-assets.vexcited.com/alarms/",
-  TRACKS_ROOT_URL: "https://lofi-co-assets.vexcited.com/ogtracks/",
-  SCENES_ROOT_URL: "https://lofi-co-assets.vexcited.com/scenes/",
-  WALLPAPERS_ROOT_URL: "https://lofi-co-assets.vexcited.com/wallpapers/",
+  EFFECTS_ROOT_URL: ASSETS_URL + "/effects/",
+  ALARMS_ROOT_URL: ASSETS_URL + "/alarms/",
+  TRACKS_ROOT_URL: ASSETS_URL + "/ogtracks/",
+  SCENES_ROOT_URL: ASSETS_URL + "/scenes/",
+  WALLPAPERS_ROOT_URL: ASSETS_URL + "/wallpapers/",
 
   /** NOTE: Should NOT be used in the app, since not supported. */
   USER_FILES_ROOT_URL: "https://lofico.nyc3.digitaloceanspaces.com",
