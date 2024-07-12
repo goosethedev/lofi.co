@@ -1,6 +1,6 @@
-import { digitalOcean } from "../../common/constants";
+import { REMOTE_ASSETS_URLS } from "./constants";
 
-const { EFFECTS_ROOT_URL, ALARMS_ROOT_URL, TRACKS_ROOT_URL } = digitalOcean;
+const { EFFECTS_ROOT_URL, ALARMS_ROOT_URL, TRACKS_ROOT_URL } = REMOTE_ASSETS_URLS;
 
 export type EffectType = "fire" | "forest" | "rain_forest" | "waves" | "fan" | "city" | "storm" | "rain_street" | "river" | "birds" | "people" | "wind" | "ocean" | "fireplace" | "snow" | "keyboard" | "underwater" | "space" | "window_rain" | "train_noise" | "thunders" | "white_noise" | "pink_noise" | "brown_noise" | "plane";
 export interface SoundEffect {

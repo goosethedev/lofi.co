@@ -3,7 +3,7 @@ import clsx from 'clsx';
 
 import "../assets/styles/ActiveScene.css";
 import effects from "../stores/effects";
-import { type EffectType } from "../assets/data/audio.data";
+import { type EffectType } from "../data/audio.data";
 import { currentScene, night, pixelated } from "../stores/scene";
 import { hasSupportFor } from "../utils/set";
 

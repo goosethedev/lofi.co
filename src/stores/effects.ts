@@ -1,5 +1,5 @@
 import { createSignal } from "solid-js";
-import { type EffectType, effects as sources } from "../assets/data/audio.data";
+import { type EffectType, effects as sources } from "../data/audio.data";
 import { createEffect, createRoot } from "solid-js";
 import { makeAudio } from "@solid-primitives/audio";
 

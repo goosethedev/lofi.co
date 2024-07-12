@@ -1,101 +1,9 @@
-import {
-  cafeInPreview,
-  cafeOutPreview,
-  cafeThumb,
-  forestInsidePreview,
-  forestOutsidePreview,
-  forestThumb,
-  summerOutPreview,
-  summerPreview,
-  summerThumb,
-  vanOutPreview,
-  vanPreview,
-  vanThumb,
-  oceanPreview,
-  oceanOutPreview,
-  oceanThumb,
-  chillVibes,
-  livingRoom,
-  bedRoom,
-  lofi_desk,
-  studyCity,
-  studyBeach,
-  studyMountain,
-  cottage,
-  cottageIn,
-  cottageOut,
-  bookCafe,
-  bookOut,
-  bookIn,
-  kyoto,
-  kyotoPark,
-  kyotoStreet,
-  dreamingScene,
-  spacePW,
-  underwaterPW,
-  honoluluIn,
-  honoluluOut,
-  honoluluPW,
-  trainJourney,
-  trainJourneyCity,
-  trainJourneyCountry,
-  newYorkBedroom,
-  newYorkCentralPark,
-  newYorkPreview,
-  greenHousePreview,
-  backseat,
-  noisePreview,
-  white,
-  pink,
-  brown,
-  backseatPreview,
-  futurePreview,
-  futureDesk,
-  futureBedroom,
-  slowGardenPreview,
-  slowGarden,
-  libraryPreview,
-  library,
-  artRoom,
-  artRoomPreview,
-  plane,
-  planePreview,
-  inthewoodsInside,
-  inthewoodsOutside,
-  inthewoodsPreview,
-  lakeHousePreview,
-  lakeHouseOutside,
-  lakeHouseInside,
-  fuji,
-  fujiPreview,
-  floatingPreview,
-  floating,
-  seaSideInside,
-  seaSideOutside,
-  seaSidePreview,
-  sunsetCamping,
-  sunsetCampingPreview,
-  tokyoNightAlley,
-  tokyoNightRamenShop,
-  tokyoNightPreview,
-  treeHouse,
-  treeHousePreview,
-  winterNight,
-  winterNightPreview,
-  cozyStudio,
-  cozyStudioPreview,
-  dreamyForest,
-  dreamyForestPreview,
-  greenHouse,
-  seoulInside,
-  seoulOutside,
-  seoulPreview
-} from "../thumbnails";
-import videos from "../videos";
-import { digitalOcean } from "../../common/constants";
+import * as thumbnails from "./thumbnail.data";
+import videos from "./video.data";
+import { REMOTE_ASSETS_URLS } from "./constants";
 import type { EffectType } from "./audio.data";
 
-const { SCENES_ROOT_URL, WALLPAPERS_ROOT_URL } = digitalOcean;
+const { SCENES_ROOT_URL, WALLPAPERS_ROOT_URL } = REMOTE_ASSETS_URLS;
 
 export interface Scene {
   thumbnail: string;
@@ -117,7 +25,7 @@ export interface Scene {
 
 export const scenes: { [key in string]: Scene } = {
   forestInside: {
-    thumbnail: forestInsidePreview,
+    thumbnail: thumbnails.forestInsidePreview,
     wallpaper: WALLPAPERS_ROOT_URL + "forest-house/forest1.jpg",
     variants: {
       default: SCENES_ROOT_URL + videos.forest.inside,
@@ -141,7 +49,7 @@ export const scenes: { [key in string]: Scene } = {
     ],
   },
   forestOutside: {
-    thumbnail: forestOutsidePreview,
+    thumbnail: thumbnails.forestOutsidePreview,
     wallpaper: WALLPAPERS_ROOT_URL + "forest-house/forest2.jpg",
     variants: {
       default: SCENES_ROOT_URL + videos.forest.outside,
@@ -172,7 +80,7 @@ export const scenes: { [key in string]: Scene } = {
     ],
   },
   vanInside: {
-    thumbnail: vanPreview,
+    thumbnail: thumbnails.vanPreview,
     variants: {
       default: SCENES_ROOT_URL + videos.van.in,
       rain_forest: SCENES_ROOT_URL + videos.van.inRain,
@@ -195,7 +103,7 @@ export const scenes: { [key in string]: Scene } = {
     ],
   },
   vanOutside: {
-    thumbnail: vanOutPreview,
+    thumbnail: thumbnails.vanOutPreview,
     variants: {
       default: SCENES_ROOT_URL + videos.van.out,
       fire: SCENES_ROOT_URL + videos.van.outFire,
@@ -217,7 +125,7 @@ export const scenes: { [key in string]: Scene } = {
     ],
   },
   library: {
-    thumbnail: library,
+    thumbnail: thumbnails.library,
     wallpaper: WALLPAPERS_ROOT_URL + "library/library.png",
     variants: {
       default: SCENES_ROOT_URL + videos.library.outRain,
@@ -245,7 +153,7 @@ export const scenes: { [key in string]: Scene } = {
     ],
   },
   artRoom: {
-    thumbnail: artRoom,
+    thumbnail: thumbnails.artRoom,
     wallpaper: WALLPAPERS_ROOT_URL + "artroom/artroom.jpg",
     variants: {
       default: SCENES_ROOT_URL + videos.artRoom.inDay,
@@ -275,7 +183,7 @@ export const scenes: { [key in string]: Scene } = {
     ],
   },
   cafeInside: {
-    thumbnail: cafeInPreview,
+    thumbnail: thumbnails.cafeInPreview,
     wallpaper: WALLPAPERS_ROOT_URL + "lofi-cafe/cafe2.jpg",
     variants: {
       default: SCENES_ROOT_URL + videos.cafe.inDay,
@@ -300,7 +208,7 @@ export const scenes: { [key in string]: Scene } = {
     ],
   },
   cafeOutside: {
-    thumbnail: cafeOutPreview,
+    thumbnail: thumbnails.cafeOutPreview,
     variants: {
       default: SCENES_ROOT_URL + videos.cafe.outDay,
       rain_street: SCENES_ROOT_URL + videos.cafe.outDayRain,
@@ -324,7 +232,7 @@ export const scenes: { [key in string]: Scene } = {
     ],
   },
   summerInside: {
-    thumbnail: summerPreview,
+    thumbnail: thumbnails.summerPreview,
     variants: {
       default: SCENES_ROOT_URL + videos.summer.inside,
       storm: SCENES_ROOT_URL + videos.summer.insideRain,
@@ -346,7 +254,7 @@ export const scenes: { [key in string]: Scene } = {
     ],
   },
   summerOutside: {
-    thumbnail: summerOutPreview,
+    thumbnail: thumbnails.summerOutPreview,
     variants: {
       default: SCENES_ROOT_URL + videos.summer.outside,
       storm: SCENES_ROOT_URL + videos.summer.outsideRain,
@@ -371,7 +279,7 @@ export const scenes: { [key in string]: Scene } = {
     ],
   },
   oceanInside: {
-    thumbnail: oceanPreview,
+    thumbnail: thumbnails.oceanPreview,
     variants: {
       default: SCENES_ROOT_URL + videos.ocean.in,
       storm: SCENES_ROOT_URL + videos.ocean.inRain,
@@ -394,7 +302,7 @@ export const scenes: { [key in string]: Scene } = {
     ],
   },
   oceanOutside: {
-    thumbnail: oceanOutPreview,
+    thumbnail: thumbnails.oceanOutPreview,
     variants: {
       default: SCENES_ROOT_URL + videos.ocean.out,
       storm: SCENES_ROOT_URL + videos.ocean.outRain,
@@ -423,7 +331,7 @@ export const scenes: { [key in string]: Scene } = {
     ],
   },
   lrBedRoom: {
-    thumbnail: bedRoom,
+    thumbnail: thumbnails.bedRoom,
     variants: {
       default: SCENES_ROOT_URL + videos.chillVibes.bed,
       rain_street: SCENES_ROOT_URL + videos.chillVibes.bedRain,
@@ -447,7 +355,7 @@ export const scenes: { [key in string]: Scene } = {
     ],
   },
   lrLivingRoom: {
-    thumbnail: livingRoom,
+    thumbnail: thumbnails.livingRoom,
     variants: {
       default: SCENES_ROOT_URL + videos.chillVibes.lr,
       rain_street: SCENES_ROOT_URL + videos.chillVibes.lrRain,
@@ -472,7 +380,7 @@ export const scenes: { [key in string]: Scene } = {
   },
   deskCity: {
     variants: { default: SCENES_ROOT_URL + videos.study.city },
-    thumbnail: studyCity,
+    thumbnail: thumbnails.studyCity,
     wallpaper: WALLPAPERS_ROOT_URL + "study/city.jpg",
     actions: [
       {
@@ -490,7 +398,7 @@ export const scenes: { [key in string]: Scene } = {
   },
   deskBeach: {
     variants: { default: SCENES_ROOT_URL + videos.study.beach },
-    thumbnail: studyBeach,
+    thumbnail: thumbnails.studyBeach,
     wallpaper: WALLPAPERS_ROOT_URL + "study/beach.jpg",
     actions: [
       {
@@ -511,7 +419,7 @@ export const scenes: { [key in string]: Scene } = {
       default: SCENES_ROOT_URL + videos.study.snow,
       snow: SCENES_ROOT_URL + videos.study.snowBlizzard,
     },
-    thumbnail: studyMountain,
+    thumbnail: thumbnails.studyMountain,
     wallpaper: WALLPAPERS_ROOT_URL + "study/snow.jpg",
     actions: [
       {
@@ -532,7 +440,7 @@ export const scenes: { [key in string]: Scene } = {
       default: SCENES_ROOT_URL + videos.cottage.in,
       snow: SCENES_ROOT_URL + videos.cottage.inSnow,
     },
-    thumbnail: cottageIn,
+    thumbnail: thumbnails.cottageIn,
     wallpaper: WALLPAPERS_ROOT_URL + "cottage/interior.png",
     actions: [
       {
@@ -560,7 +468,7 @@ export const scenes: { [key in string]: Scene } = {
       default: SCENES_ROOT_URL + videos.cottage.out,
       snow: SCENES_ROOT_URL + videos.cottage.outSnow,
     },
-    thumbnail: cottageOut,
+    thumbnail: thumbnails.cottageOut,
     wallpaper: WALLPAPERS_ROOT_URL + "cottage/exterior.png",
     actions: [
       {
@@ -578,7 +486,7 @@ export const scenes: { [key in string]: Scene } = {
       rain_street: SCENES_ROOT_URL + videos.bookCafe.inRain,
       rain_street_night: SCENES_ROOT_URL + videos.bookCafe.inRainNight,
     },
-    thumbnail: bookIn,
+    thumbnail: thumbnails.bookIn,
 
     wallpaper: WALLPAPERS_ROOT_URL + "book-cafe/int.png",
     actions: [
@@ -603,7 +511,7 @@ export const scenes: { [key in string]: Scene } = {
       rain_street: SCENES_ROOT_URL + videos.bookCafe.outRain,
       rain_street_night: SCENES_ROOT_URL + videos.bookCafe.outRainNight,
     },
-    thumbnail: bookOut,
+    thumbnail: thumbnails.bookOut,
     wallpaper: WALLPAPERS_ROOT_URL + "book-cafe/ext.png",
     actions: [
       {
@@ -630,7 +538,7 @@ export const scenes: { [key in string]: Scene } = {
       default: SCENES_ROOT_URL + videos.kyoto.park,
       default_night: SCENES_ROOT_URL + videos.kyoto.parkNight,
     },
-    thumbnail: kyotoPark,
+    thumbnail: thumbnails.kyotoPark,
     wallpaper: WALLPAPERS_ROOT_URL + "kyoto/kyoto-park.png",
     actions: [
       {
@@ -652,7 +560,7 @@ export const scenes: { [key in string]: Scene } = {
       default: SCENES_ROOT_URL + videos.kyoto.street,
       default_night: SCENES_ROOT_URL + videos.kyoto.streetNight,
     },
-    thumbnail: kyotoStreet,
+    thumbnail: thumbnails.kyotoStreet,
     wallpaper: WALLPAPERS_ROOT_URL + "kyoto/kyoto-street.png",
 
     actions: [
@@ -674,7 +582,7 @@ export const scenes: { [key in string]: Scene } = {
     variants: {
       default: SCENES_ROOT_URL + videos.dreaming.underwater,
     },
-    thumbnail: underwaterPW,
+    thumbnail: thumbnails.underwaterPW,
     wallpaper: WALLPAPERS_ROOT_URL + "am-i-dreaming/underwater-wp.png",
 
     actions: [
@@ -696,7 +604,7 @@ export const scenes: { [key in string]: Scene } = {
     variants: {
       default: SCENES_ROOT_URL + videos.dreaming.space,
     },
-    thumbnail: spacePW,
+    thumbnail: thumbnails.spacePW,
     wallpaper: WALLPAPERS_ROOT_URL + "am-i-dreaming/space-wp.png",
 
     actions: [
@@ -721,7 +629,7 @@ export const scenes: { [key in string]: Scene } = {
       default_night: SCENES_ROOT_URL + videos.honolulu.insideNight,
       storm_night: SCENES_ROOT_URL + videos.honolulu.insideNightRain,
     },
-    thumbnail: honoluluIn,
+    thumbnail: thumbnails.honoluluIn,
     wallpaper: WALLPAPERS_ROOT_URL + "honolulu/honolulu-balcony.png",
 
     actions: [
@@ -746,7 +654,7 @@ export const scenes: { [key in string]: Scene } = {
       default_night: SCENES_ROOT_URL + videos.honolulu.outsideNight,
       storm_night: SCENES_ROOT_URL + videos.honolulu.outsideNightRain,
     },
-    thumbnail: honoluluOut,
+    thumbnail: thumbnails.honoluluOut,
     wallpaper: WALLPAPERS_ROOT_URL + "honolulu/honolulu-beach.png",
 
     actions: [
@@ -771,7 +679,7 @@ export const scenes: { [key in string]: Scene } = {
       default_night: SCENES_ROOT_URL + videos.train.cityNight,
       window_rain_night: SCENES_ROOT_URL + videos.train.cityNightRain,
     },
-    thumbnail: trainJourneyCity,
+    thumbnail: thumbnails.trainJourneyCity,
     wallpaper: WALLPAPERS_ROOT_URL + "train/train-city.png",
 
     actions: [
@@ -802,7 +710,7 @@ export const scenes: { [key in string]: Scene } = {
       default_night: SCENES_ROOT_URL + videos.train.countryNight,
       window_rain_night: SCENES_ROOT_URL + videos.train.countryRainNight,
     },
-    thumbnail: trainJourneyCountry,
+    thumbnail: thumbnails.trainJourneyCountry,
     wallpaper: WALLPAPERS_ROOT_URL + "train/train-country.png",
 
     actions: [
@@ -833,7 +741,7 @@ export const scenes: { [key in string]: Scene } = {
       rain_street: SCENES_ROOT_URL + videos.newYork.bedRoomDayRain,
       rain_street_night: SCENES_ROOT_URL + videos.newYork.bedRoomNightRain,
     },
-    thumbnail: newYorkBedroom,
+    thumbnail: thumbnails.newYorkBedroom,
     wallpaper: WALLPAPERS_ROOT_URL + "new-york/bedroom-day.png",
 
     actions: [
@@ -858,7 +766,7 @@ export const scenes: { [key in string]: Scene } = {
       rain_street: SCENES_ROOT_URL + videos.newYork.centralParkDayRain,
       rain_street_night: SCENES_ROOT_URL + videos.newYork.centralParkNightRain,
     },
-    thumbnail: newYorkCentralPark,
+    thumbnail: thumbnails.newYorkCentralPark,
     wallpaper: WALLPAPERS_ROOT_URL + "new-york/central-park.png",
 
     actions: [
@@ -884,7 +792,7 @@ export const scenes: { [key in string]: Scene } = {
       rain_forest_night:
         SCENES_ROOT_URL + videos.greenHouse.greenHouseNightRain,
     },
-    thumbnail: greenHouse,
+    thumbnail: thumbnails.greenHouse,
     wallpaper: WALLPAPERS_ROOT_URL + "green-house/garden" + ".png",
 
     actions: [
@@ -915,7 +823,7 @@ export const scenes: { [key in string]: Scene } = {
       rain_street: SCENES_ROOT_URL + videos.seoul.insideDayRain,
       rain_street_night: SCENES_ROOT_URL + videos.seoul.insideNightRain,
     },
-    thumbnail: seoulInside,
+    thumbnail: thumbnails.seoulInside,
     wallpaper: WALLPAPERS_ROOT_URL + "seoul/seoul-indoor.png",
 
     actions: [
@@ -940,7 +848,7 @@ export const scenes: { [key in string]: Scene } = {
       rain_street: SCENES_ROOT_URL + videos.seoul.outsideDayRain,
       rain_street_night: SCENES_ROOT_URL + videos.seoul.outsideNightRain,
     },
-    thumbnail: seoulOutside,
+    thumbnail: thumbnails.seoulOutside,
     wallpaper: WALLPAPERS_ROOT_URL + "seoul/seoul-outdoor.png",
 
     actions: [
@@ -963,7 +871,7 @@ export const scenes: { [key in string]: Scene } = {
       default: SCENES_ROOT_URL + videos.backseat.backseatNight,
       window_rain: SCENES_ROOT_URL + videos.backseat.backseatNightRain,
     },
-    thumbnail: backseat,
+    thumbnail: thumbnails.backseat,
     wallpaper: WALLPAPERS_ROOT_URL + "backseat/drive.png",
 
     actions: [
@@ -991,7 +899,7 @@ export const scenes: { [key in string]: Scene } = {
     variants: {
       default: SCENES_ROOT_URL + videos.noise.whiteNoise,
     },
-    thumbnail: white,
+    thumbnail: thumbnails.white,
     wallpaper: WALLPAPERS_ROOT_URL + "noise/white.jpg",
 
     actions: [
@@ -1007,7 +915,7 @@ export const scenes: { [key in string]: Scene } = {
     variants: {
       default: SCENES_ROOT_URL + videos.noise.pinkNoise,
     },
-    thumbnail: pink,
+    thumbnail: thumbnails.pink,
     wallpaper: SCENES_ROOT_URL + "noise/pink.jpg",
 
     actions: [
@@ -1023,7 +931,7 @@ export const scenes: { [key in string]: Scene } = {
     variants: {
       default: SCENES_ROOT_URL + videos.noise.brownNoise,
     },
-    thumbnail: brown,
+    thumbnail: thumbnails.brown,
     wallpaper: WALLPAPERS_ROOT_URL + "noise/brown.jpg",
 
     actions: [
@@ -1041,7 +949,7 @@ export const scenes: { [key in string]: Scene } = {
       default_night: SCENES_ROOT_URL + videos.future.deskCity,
       // galaxy: null,
     },
-    thumbnail: futureDesk,
+    thumbnail: thumbnails.futureDesk,
     wallpaper: WALLPAPERS_ROOT_URL + "future/desk-galaxy.png",
 
     actions: [
@@ -1071,7 +979,7 @@ export const scenes: { [key in string]: Scene } = {
       default_night: SCENES_ROOT_URL + videos.future.bedroomCity,
       // galaxy: null,
     },
-    thumbnail: futureBedroom,
+    thumbnail: thumbnails.futureBedroom,
     wallpaper: WALLPAPERS_ROOT_URL + "future/bedroom-galaxy.png",
 
     actions: [
@@ -1100,7 +1008,7 @@ export const scenes: { [key in string]: Scene } = {
       default: SCENES_ROOT_URL + videos.slowGarden.gardenDay,
       default_night: SCENES_ROOT_URL + videos.slowGarden.gardenNight,
     },
-    thumbnail: slowGarden,
+    thumbnail: thumbnails.slowGarden,
     wallpaper: WALLPAPERS_ROOT_URL + "slowgarden/slowgarden.jpeg",
 
     actions: [
@@ -1129,7 +1037,7 @@ export const scenes: { [key in string]: Scene } = {
       default: SCENES_ROOT_URL + videos.aboveTheClouds.planeDay,
       default_night: SCENES_ROOT_URL + videos.aboveTheClouds.planeNight,
     },
-    thumbnail: plane,
+    thumbnail: thumbnails.plane,
     wallpaper: WALLPAPERS_ROOT_URL + "plane/plane.png",
 
     actions: [
@@ -1158,7 +1066,7 @@ export const scenes: { [key in string]: Scene } = {
       default: SCENES_ROOT_URL + videos.inTheWoods.insideSun,
       rain_forest: SCENES_ROOT_URL + videos.inTheWoods.insideRain,
     },
-    thumbnail: inthewoodsInside,
+    thumbnail: thumbnails.inthewoodsInside,
     wallpaper: WALLPAPERS_ROOT_URL + "inthewoods/inside.jpg",
 
     actions: [
@@ -1181,7 +1089,7 @@ export const scenes: { [key in string]: Scene } = {
       default: SCENES_ROOT_URL + videos.inTheWoods.outsideSun,
       rain_forest: SCENES_ROOT_URL + videos.inTheWoods.outsideRain,
     },
-    thumbnail: inthewoodsOutside,
+    thumbnail: thumbnails.inthewoodsOutside,
     wallpaper: WALLPAPERS_ROOT_URL + "inthewoods/outside.jpg",
 
     actions: [
@@ -1212,7 +1120,7 @@ export const scenes: { [key in string]: Scene } = {
       rain_forest: SCENES_ROOT_URL + videos.lakeHouse.insideDayRain,
       rain_forest_night: SCENES_ROOT_URL + videos.lakeHouse.insideNightRain,
     },
-    thumbnail: lakeHouseInside,
+    thumbnail: thumbnails.lakeHouseInside,
     wallpaper: WALLPAPERS_ROOT_URL + "lake-house/inside-day.jpg",
 
     actions: [
@@ -1243,7 +1151,7 @@ export const scenes: { [key in string]: Scene } = {
       rain_forest: SCENES_ROOT_URL + videos.lakeHouse.outsideDayRain,
       rain_forest_night: SCENES_ROOT_URL + videos.lakeHouse.outsideNightRain,
     },
-    thumbnail: lakeHouseOutside,
+    thumbnail: thumbnails.lakeHouseOutside,
     wallpaper: WALLPAPERS_ROOT_URL + "lake-house/outside-day.jpg",
 
     actions: [
@@ -1272,7 +1180,7 @@ export const scenes: { [key in string]: Scene } = {
       default: SCENES_ROOT_URL + videos.fuji.day,
       default_night: SCENES_ROOT_URL + videos.fuji.night,
     },
-    thumbnail: fuji,
+    thumbnail: thumbnails.fuji,
     wallpaper: WALLPAPERS_ROOT_URL + "Fuji/fuji2.jpg",
 
     actions: [
@@ -1301,7 +1209,7 @@ export const scenes: { [key in string]: Scene } = {
       default: SCENES_ROOT_URL + videos.floating.day,
       default_night: SCENES_ROOT_URL + videos.floating.night,
     },
-    thumbnail: floating,
+    thumbnail: thumbnails.floating,
     wallpaper: WALLPAPERS_ROOT_URL + "floating/floating.jpg",
 
     actions: [
@@ -1332,7 +1240,7 @@ export const scenes: { [key in string]: Scene } = {
       storm: SCENES_ROOT_URL + videos.seaSide.insideDayRain,
       storm_night: SCENES_ROOT_URL + videos.seaSide.insideNightRain,
     },
-    thumbnail: seaSideInside,
+    thumbnail: thumbnails.seaSideInside,
     wallpaper: WALLPAPERS_ROOT_URL + "seaside/room.jpg",
 
     actions: [
@@ -1357,7 +1265,7 @@ export const scenes: { [key in string]: Scene } = {
       storm: SCENES_ROOT_URL + videos.seaSide.outsideDayRain,
       storm_night: SCENES_ROOT_URL + videos.seaSide.outsideNightRain,
     },
-    thumbnail: seaSideOutside,
+    thumbnail: thumbnails.seaSideOutside,
     wallpaper: WALLPAPERS_ROOT_URL + "seaside/outside.jpg",
 
     actions: [
@@ -1386,7 +1294,7 @@ export const scenes: { [key in string]: Scene } = {
       default: SCENES_ROOT_URL + videos.sunsetCamping.sunny,
       rain_forest: SCENES_ROOT_URL + videos.sunsetCamping.rainy,
     },
-    thumbnail: sunsetCamping,
+    thumbnail: thumbnails.sunsetCamping,
     wallpaper: WALLPAPERS_ROOT_URL + "sunset-camping/camping.png",
 
     actions: [
@@ -1415,7 +1323,7 @@ export const scenes: { [key in string]: Scene } = {
       default: SCENES_ROOT_URL + videos.tokyoNight.ramenShop,
       rain_street: SCENES_ROOT_URL + videos.tokyoNight.ramenShopRain,
     },
-    thumbnail: tokyoNightRamenShop,
+    thumbnail: thumbnails.tokyoNightRamenShop,
     wallpaper: WALLPAPERS_ROOT_URL + "TokyoNight/RamenShop.jpg",
 
     actions: [
@@ -1438,7 +1346,7 @@ export const scenes: { [key in string]: Scene } = {
       default: SCENES_ROOT_URL + videos.tokyoNight.alley,
       rain_street: SCENES_ROOT_URL + videos.tokyoNight.alleyRain,
     },
-    thumbnail: tokyoNightAlley,
+    thumbnail: thumbnails.tokyoNightAlley,
     wallpaper: WALLPAPERS_ROOT_URL + "TokyoNight/Alley.jpg",
 
     actions: [
@@ -1469,7 +1377,7 @@ export const scenes: { [key in string]: Scene } = {
       rain_forest: SCENES_ROOT_URL + videos.treeHouse.dayRain,
       rain_forest_night: SCENES_ROOT_URL + videos.treeHouse.nightRain,
     },
-    thumbnail: treeHouse,
+    thumbnail: thumbnails.treeHouse,
     wallpaper: WALLPAPERS_ROOT_URL + "treehouse/treehouse.jpg",
 
     actions: [
@@ -1494,7 +1402,7 @@ export const scenes: { [key in string]: Scene } = {
     ],
   },
   winterNight: {
-    thumbnail: winterNight,
+    thumbnail: thumbnails.winterNight,
     wallpaper: WALLPAPERS_ROOT_URL + "winternight/winternight.png",
     variants: {
       default: SCENES_ROOT_URL + videos.winterNight.day,
@@ -1522,7 +1430,7 @@ export const scenes: { [key in string]: Scene } = {
     ],
   },
   cozyStudio: {
-    thumbnail: cozyStudio,
+    thumbnail: thumbnails.cozyStudio,
     wallpaper: WALLPAPERS_ROOT_URL + "cozy_studio/studio_day.png",
     variants: {
       default: SCENES_ROOT_URL + videos.cozyStudio.day,
@@ -1552,7 +1460,7 @@ export const scenes: { [key in string]: Scene } = {
     ],
   },
   dreamyForest: {
-    thumbnail: dreamyForest,
+    thumbnail: thumbnails.dreamyForest,
     wallpaper: WALLPAPERS_ROOT_URL + "dreamy-forest/forestimage.jpeg",
     variants: {
       default: SCENES_ROOT_URL + videos.dreamyForest.day,
@@ -1593,7 +1501,7 @@ export interface SceneSet {
 const sets: SceneSet[] = [
   {
     _id: "cozy_studio",
-    thumbnail: cozyStudioPreview,
+    thumbnail: thumbnails.cozyStudioPreview,
     name: "Cozy Studio",
     scenes: [scenes.cozyStudio],
     effects: ["keyboard", "city", "rain_street"],
@@ -1601,7 +1509,7 @@ const sets: SceneSet[] = [
 
   {
     _id: "dreamy_forest",
-    thumbnail: dreamyForestPreview,
+    thumbnail: thumbnails.dreamyForestPreview,
     name: "Dreamy Forest",
     scenes: [scenes.dreamyForest],
     effects: ["birds", "forest", "river"],
@@ -1609,7 +1517,7 @@ const sets: SceneSet[] = [
 
   {
     _id: "dreaming",
-    thumbnail: dreamingScene,
+    thumbnail: thumbnails.dreamingScene,
     name: "Am I Dreaming?",
     scenes: [scenes.space, scenes.underwater],
     effects: ["keyboard", "space", "underwater"],
@@ -1617,7 +1525,7 @@ const sets: SceneSet[] = [
 
   {
     _id: "winter_night",
-    thumbnail: winterNightPreview,
+    thumbnail: thumbnails.winterNightPreview,
     name: "Winter Night",
     scenes: [scenes.winterNight],
     effects: ["city", "wind", "snow"],
@@ -1626,7 +1534,7 @@ const sets: SceneSet[] = [
 
   {
     _id: "seoul",
-    thumbnail: seoulPreview,
+    thumbnail: thumbnails.seoulPreview,
     name: "Seoul",
     scenes: [scenes.seoulInside, scenes.seoulOutside],
     effects: ["keyboard", "city", "rain_street"],
@@ -1635,7 +1543,7 @@ const sets: SceneSet[] = [
 
   {
     _id: "tree_house",
-    thumbnail: treeHousePreview,
+    thumbnail: thumbnails.treeHousePreview,
     name: "Tree House",
     scenes: [scenes.treeHouse],
     effects: ["rain_forest", "birds", "keyboard"],
@@ -1644,7 +1552,7 @@ const sets: SceneSet[] = [
 
   {
     _id: "lofi_cafe",
-    thumbnail: cafeThumb,
+    thumbnail: thumbnails.cafeThumb,
     name: "Lofi café",
     scenes: [scenes.cafeOutside, scenes.cafeInside],
     effects: ["city", "rain_street", "people", "rain_window"],
@@ -1653,7 +1561,7 @@ const sets: SceneSet[] = [
 
   {
     _id: "in_the_woods",
-    thumbnail: inthewoodsPreview,
+    thumbnail: thumbnails.inthewoodsPreview,
     name: "In the Woods",
     scenes: [scenes.inTheWoodsInside, scenes.inTheWoodsOutside],
     effects: ["rain_forest", "birds", "forest"],
@@ -1662,7 +1570,7 @@ const sets: SceneSet[] = [
 
   {
     _id: "tokyo_night",
-    thumbnail: tokyoNightPreview,
+    thumbnail: thumbnails.tokyoNightPreview,
     name: "Tokyo Night",
     scenes: [scenes.tokyoNightRamenShop, scenes.tokyoNightAlley],
     effects: ["city", "rain_street", "thunders"],
@@ -1671,7 +1579,7 @@ const sets: SceneSet[] = [
 
   {
     _id: "lake_house",
-    thumbnail: lakeHousePreview,
+    thumbnail: thumbnails.lakeHousePreview,
     name: "Lake House",
     scenes: [scenes.lakeHouseOutside, scenes.lakeHouseInside],
     effects: ["rain_forest", "birds", "keyboard"],
@@ -1680,7 +1588,7 @@ const sets: SceneSet[] = [
 
   {
     _id: "sunset_camping",
-    thumbnail: sunsetCampingPreview,
+    thumbnail: thumbnails.sunsetCampingPreview,
     name: "Sunset Camping",
     scenes: [scenes.sunsetCamping],
     effects: ["rain_forest", "birds", "fire"],
@@ -1689,7 +1597,7 @@ const sets: SceneSet[] = [
 
   {
     _id: "sea_side",
-    thumbnail: seaSidePreview,
+    thumbnail: thumbnails.seaSidePreview,
     name: "Sea Side",
     scenes: [scenes.seaSideInside, scenes.seaSideOutside],
     effects: ["ocean", "waves", "storm"],
@@ -1698,7 +1606,7 @@ const sets: SceneSet[] = [
 
   {
     _id: "floating",
-    thumbnail: floatingPreview,
+    thumbnail: thumbnails.floatingPreview,
     name: "Floating",
     scenes: [scenes.floating],
     effects: ["wind", "ocean", "underwater"],
@@ -1707,7 +1615,7 @@ const sets: SceneSet[] = [
 
   {
     _id: "fuji",
-    thumbnail: fujiPreview,
+    thumbnail: thumbnails.fujiPreview,
     name: "Fuji",
     scenes: [scenes.fuji],
     effects: ["forest", "river", "birds"],
@@ -1716,7 +1624,7 @@ const sets: SceneSet[] = [
 
   {
     _id: "plane",
-    thumbnail: planePreview,
+    thumbnail: thumbnails.planePreview,
     name: "Above the clouds",
     scenes: [scenes.plane],
     effects: ["keyboard", "plane", "brown_noise"],
@@ -1725,7 +1633,7 @@ const sets: SceneSet[] = [
 
   {
     _id: "artroom",
-    thumbnail: artRoomPreview,
+    thumbnail: thumbnails.artRoomPreview,
     name: "Art room",
     scenes: [scenes.artRoom],
     effects: ["birds", "rain_street", "wind"],
@@ -1734,7 +1642,7 @@ const sets: SceneSet[] = [
 
   {
     _id: "library",
-    thumbnail: libraryPreview,
+    thumbnail: thumbnails.libraryPreview,
     name: "Library",
     scenes: [scenes.library],
     effects: ["thunders", "window_rain", "fireplace"],
@@ -1743,7 +1651,7 @@ const sets: SceneSet[] = [
 
   {
     _id: "slowgarden",
-    thumbnail: slowGardenPreview,
+    thumbnail: thumbnails.slowGardenPreview,
     name: "Slow Garden",
     scenes: [scenes.slowGarden],
     effects: ["river", "birds", "wind"],
@@ -1752,7 +1660,7 @@ const sets: SceneSet[] = [
 
   {
     _id: "noise",
-    thumbnail: noisePreview,
+    thumbnail: thumbnails.noisePreview,
     name: "Noise",
     scenes: [scenes.whiteNoise, scenes.pinkNoise, scenes.brownNoise],
     effects: ["white_noise", "pink_noise", "brown_noise"],
@@ -1761,7 +1669,7 @@ const sets: SceneSet[] = [
 
   {
     _id: "future",
-    thumbnail: futurePreview,
+    thumbnail: thumbnails.futurePreview,
     name: "Future",
     scenes: [scenes.futureBedroom, scenes.futureDesk],
     effects: ["keyboard", "city", "space"],
@@ -1770,7 +1678,7 @@ const sets: SceneSet[] = [
 
   {
     _id: "backseat",
-    thumbnail: backseatPreview,
+    thumbnail: thumbnails.backseatPreview,
     name: "Backseat",
     scenes: [scenes.backseat],
     effects: ["city", "thunders", "window_rain"],
@@ -1779,7 +1687,7 @@ const sets: SceneSet[] = [
 
   {
     _id: "green_house",
-    thumbnail: greenHousePreview,
+    thumbnail: thumbnails.greenHousePreview,
     name: "Green House",
     scenes: [scenes.greenHouse],
     effects: ["rain_forest", "river", "birds"],
@@ -1788,7 +1696,7 @@ const sets: SceneSet[] = [
 
   {
     _id: "new_york",
-    thumbnail: newYorkPreview,
+    thumbnail: thumbnails.newYorkPreview,
     name: "New York",
     scenes: [scenes.newYorkBedroom, scenes.newYorkCentralPark],
     effects: ["city", "rain_street", "birds"],
@@ -1797,7 +1705,7 @@ const sets: SceneSet[] = [
 
   {
     _id: "honolulu",
-    thumbnail: honoluluPW,
+    thumbnail: thumbnails.honoluluPW,
     name: "Honolulu",
     scenes: [scenes.honoluluIN, scenes.honoluluOut],
     effects: ["keyboard", "storm", "ocean"],
@@ -1806,7 +1714,7 @@ const sets: SceneSet[] = [
 
   {
     _id: "train_journey",
-    thumbnail: trainJourney,
+    thumbnail: thumbnails.trainJourney,
     name: "Train Journey",
     scenes: [scenes.trainJourneyCity, scenes.trainJourneyCountry],
     effects: ["window_rain", "train_noise", "keyboard"],
@@ -1815,7 +1723,7 @@ const sets: SceneSet[] = [
 
   {
     _id: "kyoto",
-    thumbnail: kyoto,
+    thumbnail: thumbnails.kyoto,
     name: "Kyoto",
     scenes: [scenes.kyotoStreet, scenes.kyotoPark],
     effects: ["city", "birds", "river"],
@@ -1823,7 +1731,7 @@ const sets: SceneSet[] = [
   },
   {
     _id: "chill_vibes",
-    thumbnail: chillVibes,
+    thumbnail: thumbnails.chillVibes,
     name: "Chill Vibes",
     scenes: [scenes.lrBedRoom, scenes.lrLivingRoom],
     effects: ["city", "rain_street", "fireplace"],
@@ -1832,7 +1740,7 @@ const sets: SceneSet[] = [
 
   {
     _id: "book_cafe",
-    thumbnail: bookCafe,
+    thumbnail: thumbnails.bookCafe,
     name: "Book Cafe",
     scenes: [scenes.bookCafeOut, scenes.bookCafeIn],
     effects: ["city", "rain_street", "keyboard"],
@@ -1841,7 +1749,7 @@ const sets: SceneSet[] = [
 
   {
     _id: "cottage",
-    thumbnail: cottage,
+    thumbnail: thumbnails.cottage,
     premium: true,
     name: "Northern Lights",
     scenes: [scenes.cottageIn, scenes.cottageOut],
@@ -1849,7 +1757,7 @@ const sets: SceneSet[] = [
   },
   {
     _id: "desk_lofi",
-    thumbnail: lofi_desk,
+    thumbnail: thumbnails.lofi_desk,
     name: "Lofi Desk",
     scenes: [scenes.deskCity, scenes.deskBeach, scenes.deskSnow],
     effects: ["city", "waves", "snow"],
@@ -1857,7 +1765,7 @@ const sets: SceneSet[] = [
   },
   {
     _id: "forest_house",
-    thumbnail: forestThumb,
+    thumbnail: thumbnails.forestThumb,
     name: "Forest House",
     scenes: [scenes.forestInside, scenes.forestOutside],
     effects: ["rain_forest", "birds", "river"],
@@ -1865,7 +1773,7 @@ const sets: SceneSet[] = [
   },
   {
     _id: "ocean_tale",
-    thumbnail: oceanThumb,
+    thumbnail: thumbnails.oceanThumb,
     name: "Ocean Tales",
     scenes: [scenes.oceanInside, scenes.oceanOutside],
     effects: ["ocean", "wind", "storm"],
@@ -1873,7 +1781,7 @@ const sets: SceneSet[] = [
   },
   {
     _id: "van_life",
-    thumbnail: vanThumb,
+    thumbnail: thumbnails.vanThumb,
     name: "Van Life",
     scenes: [scenes.vanInside, scenes.vanOutside],
     effects: ["fire", "forest", "rain_forest"],
@@ -1882,7 +1790,7 @@ const sets: SceneSet[] = [
 
   {
     _id: "summer_days",
-    thumbnail: summerThumb,
+    thumbnail: thumbnails.summerThumb,
     name: "Summer Days",
     scenes: [scenes.summerInside, scenes.summerOutside],
     effects: ["storm", "fan", "waves"],
@@ -1890,4 +1798,4 @@ const sets: SceneSet[] = [
   },
 ];
 
-export { sets };
+export { sets as sceneSets };

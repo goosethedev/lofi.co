@@ -1,4 +1,4 @@
-import { type SoundTrackMood, playlistsBase } from "../assets/data/audio.data";
+import { type SoundTrackMood, playlistsBase } from "../data/audio.data";
 import { type AudioState, createAudio } from "@solid-primitives/audio"
 import { createStore, unwrap } from "solid-js/store";
 import { createEffect, createRoot, on, onCleanup } from "solid-js";

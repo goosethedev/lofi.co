@@ -1,5 +1,5 @@
 import { For, Show, createSignal, type Component } from "solid-js";
-import { type SceneSet, sets } from "../assets/data/sets.data";
+import { type SceneSet, sceneSets } from "../data/scene.data";
 import { setCurrentScene } from "../stores/scene";
 
 const SceneSelector: Component = () => {
@@ -9,7 +9,7 @@ const SceneSelector: Component = () => {
     <div class="z-20 fixed inset-x-[17px] bottom-[80px] bg-bgd-100 rounded-[10px] border border-white/20 backdrop-blur-[30px] flex gap-4 px-4 py-3 max-w-screen overflow-auto">
       <Show when={sceneSelected()}
         fallback={
-          <For each={sets}>
+          <For each={sceneSets}>
             {set => (
               <button type="button" class="flex-shrink-0" onClick={
                 () => setSceneSelected(set)
