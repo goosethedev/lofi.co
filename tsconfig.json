@@ -20,8 +20,11 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
-    
+
     "types": [
+      "vite-plugin-solid-svg/types",
+      // Doesn't work. No default detection as Component.
+      // "vite-plugin-solid-svg/types-component-solid",
       "unplugin-icons/types/solid"
     ]
   },

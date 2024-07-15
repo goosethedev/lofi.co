@@ -1,24 +1,24 @@
 import { type Component, Show, type VoidComponent, type JSX, createSignal } from "solid-js";
+import { AudioState } from "@solid-primitives/audio";
 import { Tooltip } from "@kobalte/core/tooltip";
 
-import SkipPreviousIcon from "../assets/icons/SkipPrevious";
-import SkipNextIcon from "../assets/icons/SkipNext";
-import PlayIcon from "../assets/icons/Play";
-import SettingsIcon from "../assets/icons/Settings";
 import { currentScene, night, pixelated, setNight, setPixelated } from "../stores/scene";
 import { hasSupportFor } from "../utils/set";
-import VolumeIcon from "../assets/icons/Volume";
-import VolumeMuteIcon from "../assets/icons/VolumeMute";
-import MixerIcon from "../assets/icons/Mixer";
-// import TemplatesIcon from "../assets/icons/Templates";
-import ScenesIcon from "../assets/icons/Scenes";
-import ToolsIcon from "../assets/icons/Tools";
-import PipIcon from "../assets/icons/Pip";
-import FullscreenIcon from "../assets/icons/Fullscreen";
-import player from "../stores/player";
-import PauseIcon from "../assets/icons/Pause";
-import { AudioState } from "@solid-primitives/audio";
 import { setShowSceneSelector } from "../stores/app";
+import player from "../stores/player";
+
+import SkipPreviousIcon from "../assets/icons/skip-previous.svg?component-solid";
+import SkipNextIcon from "../assets/icons/skip-next.svg?component-solid";
+import PlayIcon from "../assets/icons/play.svg?component-solid";
+import SettingsIcon from "../assets/icons/settings.svg?component-solid";
+import VolumeIcon from "../assets/icons/volume.svg?component-solid";
+import VolumeMuteIcon from "../assets/icons/volume-mute.svg?component-solid";
+import MixerIcon from "../assets/icons/mixer.svg?component-solid";
+import ScenesIcon from "../assets/icons/scenes.svg?component-solid";
+import ToolsIcon from "../assets/icons/tools.svg?component-solid";
+import PipIcon from "../assets/icons/pip.svg?component-solid";
+import FullscreenIcon from "../assets/icons/fullscreen.svg?component-solid";
+import PauseIcon from "../assets/icons/pause.svg?component-solid";
 
 const Divider = () => (
   <div class="bg-[#fff2] rounded-[2px] h-[1px] my-[20px] w-[20px] rotate-90" />
