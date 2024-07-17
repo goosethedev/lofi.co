@@ -6,9 +6,9 @@ import '@fontsource/roboto/500.css';
 import "virtual:uno.css";
 
 import { render } from 'solid-js/web';
-import Application from './views/Application';
+import App from './App';
 
 render(
-  () => <Application />,
+  () => <App />,
   document.getElementById('root') as HTMLDivElement
 );

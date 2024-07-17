@@ -1,6 +1,6 @@
 import { For, Show, createSignal, type Component } from "solid-js";
-import { type SceneSet, sceneSets } from "../data/scene.data";
-import { setCurrentScene } from "../stores/scene";
+import { type SceneSet, sceneSets } from "../../../data/scene.data";
+import { setCurrentScene } from "../../../stores/scene";
 
 const SceneSelector: Component = () => {
   const [sceneSelected, setSceneSelected] = createSignal<SceneSet | null>(null);

@@ -2,23 +2,23 @@ import { type Component, Show, type VoidComponent, type JSX, createSignal } from
 import { AudioState } from "@solid-primitives/audio";
 import { Tooltip } from "@kobalte/core/tooltip";
 
-import { currentScene, night, pixelated, setNight, setPixelated } from "../stores/scene";
-import { hasSupportFor } from "../utils/set";
-import { setShowSceneSelector } from "../stores/app";
-import player from "../stores/player";
+import { setShowSceneSelector } from "../../../stores/app";
+import player from "../../../stores/player";
+import { currentScene, night, setNight, pixelated, setPixelated } from "../../../stores/scene";
+import { hasSupportFor } from "../../../utils/set";
 
-import SkipPreviousIcon from "../assets/icons/skip-previous.svg?component-solid";
-import SkipNextIcon from "../assets/icons/skip-next.svg?component-solid";
-import PlayIcon from "../assets/icons/play.svg?component-solid";
-import SettingsIcon from "../assets/icons/settings.svg?component-solid";
-import VolumeIcon from "../assets/icons/volume.svg?component-solid";
-import VolumeMuteIcon from "../assets/icons/volume-mute.svg?component-solid";
-import MixerIcon from "../assets/icons/mixer.svg?component-solid";
-import ScenesIcon from "../assets/icons/scenes.svg?component-solid";
-import ToolsIcon from "../assets/icons/tools.svg?component-solid";
-import PipIcon from "../assets/icons/pip.svg?component-solid";
-import FullscreenIcon from "../assets/icons/fullscreen.svg?component-solid";
-import PauseIcon from "../assets/icons/pause.svg?component-solid";
+import SkipPreviousIcon from "../../../assets/icons/skip-previous.svg?component-solid";
+import SkipNextIcon from "../../../assets/icons/skip-next.svg?component-solid";
+import PlayIcon from "../../../assets/icons/play.svg?component-solid";
+import SettingsIcon from "../../../assets/icons/settings.svg?component-solid";
+import VolumeIcon from "../../../assets/icons/volume.svg?component-solid";
+import VolumeMuteIcon from "../../../assets/icons/volume-mute.svg?component-solid";
+import MixerIcon from "../../../assets/icons/mixer.svg?component-solid";
+import ScenesIcon from "../../../assets/icons/scenes.svg?component-solid";
+import ToolsIcon from "../../../assets/icons/tools.svg?component-solid";
+import PipIcon from "../../../assets/icons/pip.svg?component-solid";
+import FullscreenIcon from "../../../assets/icons/fullscreen.svg?component-solid";
+import PauseIcon from "../../../assets/icons/pause.svg?component-solid";
 
 const Divider = () => (
   <div class="bg-[#fff2] rounded-[2px] h-[1px] my-[20px] w-[20px] rotate-90" />
@@ -124,7 +124,7 @@ const LateralMenu: Component = () => {
           icon={<VolumeMuteIcon />}
           onClick={() => player.controls.setMuted(!player.audio.muted)}
         />
-        
+
         <Divider />
 
         <Button

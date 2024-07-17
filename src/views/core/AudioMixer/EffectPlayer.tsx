@@ -1,6 +1,6 @@
 import { For, type Component } from "solid-js";
-import effects from "../stores/effects";
-import type { EffectType } from "../data/audio.data";
+import effects from "../../../stores/effects";
+import type { EffectType } from "../../../data/audio.data";
 
 const EffectPlayer: Component = () => {
   const enabledEffects = () => {

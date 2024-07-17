@@ -2,12 +2,12 @@ import { For, type Component, createMemo, Show, createSignal } from "solid-js";
 import clsx from 'clsx';
 import { HoverCard } from "@kobalte/core/hover-card";
 
-import "../assets/styles/ActiveScene.css";
-import effects from "../stores/effects";
-import { type EffectType } from "../data/audio.data";
-import { currentScene, night, pixelated } from "../stores/scene";
-import { hasSupportFor } from "../utils/set";
-import { Action } from "../data/scene.data";
+import "../../../assets/styles/ActiveScene.css";
+import { Action } from "../../../data/scene.data";
+import { EffectType } from "../../../data/audio.data";
+import { currentScene, night, pixelated } from "../../../stores/scene";
+import { hasSupportFor } from "../../../utils/set";
+import effects from "../../../stores/effects";
 
 const ActiveScene: Component = () => {
   /**
