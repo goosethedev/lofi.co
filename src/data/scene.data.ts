@@ -5,14 +5,10 @@ import type { EffectType } from "./audio.data";
 
 const { SCENES_ROOT_URL, WALLPAPERS_ROOT_URL } = REMOTE_ASSETS_URLS;
 
-export interface Scene {
-  thumbnail: string;
-  wallpaper: string;
-  variants: { [key in string]: string };
-  actions: ({
-    position: [number, number];
-    title: string;
-  } & (
+export type Action = {
+  position: [number, number];
+  title: string;
+} & (
     | {
       type: "sound";
       effect: EffectType;
@@ -20,7 +16,14 @@ export interface Scene {
     | {
       type: "next-set";
     }
-  ))[];
+  )
+
+
+export interface Scene {
+  thumbnail: string;
+  wallpaper: string;
+  variants: { [key in string]: string };
+  actions: Action[];
 }
 
 export const scenes: { [key in string]: Scene } = {
