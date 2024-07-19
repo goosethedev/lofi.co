@@ -1,5 +1,6 @@
 import { type Component, Show, type VoidComponent, type JSX, createSignal } from "solid-js";
 import { AudioState } from "@solid-primitives/audio";
+import { createDateNow } from "@solid-primitives/date";
 import { Tooltip } from "@kobalte/core/tooltip";
 
 import DarkModeToggle from "../../../components/DarkModeToggle";
@@ -28,6 +29,8 @@ const Divider = () => (
 const LateralMenu: Component = () => {
   const supportForNight = () => hasSupportFor(currentScene(), "night");
   const supportForPixel = () => hasSupportFor(currentScene(), "pixel");
+
+  const [currentTime] = createDateNow(1000)
 
   const Button: VoidComponent<{
     active?: boolean
@@ -70,7 +73,7 @@ const LateralMenu: Component = () => {
 
       <div class="col-span-1 flex flex-row gap-3 items-center">
 
-        <p class="text-sm font-medium">03:18 PM</p>
+        <p class="text-sm font-medium">{currentTime().toLocaleTimeString("en-US", { hour12: true, hour: "numeric", minute: "numeric" })}</p>
 
         <Show when={supportForNight()}>
           <DarkModeToggle dark={night} setDark={setNight} />
