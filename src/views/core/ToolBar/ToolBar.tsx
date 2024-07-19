@@ -2,6 +2,7 @@ import { type Component, Show, type VoidComponent, type JSX, createSignal } from
 import { AudioState } from "@solid-primitives/audio";
 import { Tooltip } from "@kobalte/core/tooltip";
 
+import DarkModeToggle from "../../../components/DarkModeToggle";
 import { setShowSceneSelector } from "../../../stores/app";
 import player from "../../../stores/player";
 import { currentScene, night, setNight, pixelated, setPixelated } from "../../../stores/scene";
@@ -65,30 +66,29 @@ const LateralMenu: Component = () => {
   );
 
   return (
-    <div class="z-20 fixed bottom-[22px] inset-x-[17px] bg-bgd-100 rounded-[10px] h-[52px] border border-white/20 backdrop-blur-[30px] flex justify-between items-center px-4">
-      {/* <p class="mr-auto">03:23 PM</p> */}
+    <div class="z-20 fixed bottom-[22px] inset-x-[17px] bg-bgd-100 rounded-[10px] h-[48px] border border-white/20 backdrop-blur-[30px] grid grid-cols-5 items-center px-4">
 
-      <Show when={supportForNight()}>
-        <input
-          type="checkbox"
-          checked={night()}
-          onChange={() => {
-            setNight(prev => !prev);
-          }}
-        />
-      </Show>
+      <div class="col-span-1 flex flex-row gap-3 items-center">
 
-      <Show when={supportForPixel()}>
-        <input
-          type="checkbox"
-          checked={pixelated()}
-          onChange={() => {
-            setPixelated(prev => !prev);
-          }}
-        />
-      </Show>
+        <p class="text-sm font-medium">03:18 PM</p>
 
-      <div class="flex items-center gap-1.5">
+        <Show when={supportForNight()}>
+          <DarkModeToggle dark={night} setDark={setNight} />
+        </Show>
+
+        <Show when={supportForPixel()}>
+          <input
+            type="checkbox"
+            checked={pixelated()}
+            onChange={() => {
+              setPixelated(prev => !prev);
+            }}
+          />
+        </Show>
+
+      </div>
+
+      <div class="col-span-3 flex flex-row justify-center items-center gap-1">
         <Button
           name="Previous track"
           icon={<SkipPreviousIcon />}
@@ -160,7 +160,7 @@ const LateralMenu: Component = () => {
         />
       </div>
 
-      <div>
+      <div class="col-span-1 flex flex-row justify-end items-center">
         <SettingsIcon />
       </div>
     </div>
