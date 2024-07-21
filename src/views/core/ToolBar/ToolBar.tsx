@@ -4,7 +4,7 @@ import { createDateNow } from "@solid-primitives/date";
 import { Tooltip } from "@kobalte/core/tooltip";
 
 import DarkModeToggle from "../../../components/DarkModeToggle";
-import { setShowSceneSelector } from "../../../stores/app";
+import { setShowAudioMixer, setShowSceneSelector } from "../../../stores/app";
 import player from "../../../stores/player";
 import { currentScene, night, setNight, pixelated, setPixelated } from "../../../stores/scene";
 import { hasSupportFor } from "../../../utils/set";
@@ -133,7 +133,7 @@ const LateralMenu: Component = () => {
         <Button
           name="Mixer"
           icon={<MixerIcon />}
-          onClick={() => void 0}
+          onClick={() => setShowAudioMixer(prev => !prev)}
         />
         {/* <Button
           name="Templates"

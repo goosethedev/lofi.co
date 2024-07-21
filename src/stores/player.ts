@@ -1,7 +1,7 @@
 import { type SoundTrackMood, playlistsBase } from "../data/audio.data";
 import { type AudioState, createAudio } from "@solid-primitives/audio"
 import { createStore, unwrap } from "solid-js/store";
-import { createEffect, createRoot, on, onCleanup } from "solid-js";
+import { batch, createEffect, createRoot, on, onCleanup } from "solid-js";
 
 export interface PlayerState {
   playing: boolean;
@@ -99,6 +99,16 @@ const player = createRoot(() => {
     console.info("History", history);
   };
 
+  // Change playlist mood
+  const switchMood = (mood: SoundTrackMood) => {
+    batch(() => {
+      setState('history', []);
+      setState('playlistMood', mood);
+      setState('currentTrackID', findSuitableTrack())
+    })
+    controls.play()
+  }
+
   audio.player.addEventListener("ended", handleNextTrack);
   onCleanup(() => audio.player.removeEventListener("ended", handleNextTrack));
   
@@ -137,10 +147,11 @@ const player = createRoot(() => {
         controls.setVolume(volume);
       },
 
-      setMuted: (muted: boolean) => setState({ muted })
+      setMuted: (muted: boolean) => setState({ muted }),
+      setMood: (mood: SoundTrackMood) => switchMood(mood)
     },
     
-    mood: state.playlistMood,
+    mood: () => state.playlistMood,
     currentTrackID: state.currentTrackID,
 
     nextTrack: handleNextTrack,
